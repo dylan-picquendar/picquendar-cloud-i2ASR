@@ -20,11 +20,17 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
 
-      - name: Build and push
-        uses: docker/build-push-action@v1
+      - uses: mr-smithers-excellent/docker-build-push@v5
+        name: Build & push Docker image
         with:
-          repository: dylan-picquendar/guestbook
+          tags: latest
           dockerfile: guestbook/Dockerfile
-          tag_with_sha: true
-          tags : latest
+
+#      - name: Build and push
+#        uses: docker/build-push-action@v1
+#        with:
+#          repository: dylan-picquendar/guestbook
+#          dockerfile: guestbook/Dockerfile
+#          tag_with_sha: true
+#          tags : latest
 
