@@ -21,7 +21,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASS }}
 
       - name: Build Docker images
-        run: docker build . --file Dockerfile --tag 260219020608/guestbook:$GITHUB_SHA
+        run: docker build . --file Dockerfile --tag 260219010608/guestbook:$GITHUB_SHA
         working-directory: ./guestbook
 
       - name: Push Docker images
