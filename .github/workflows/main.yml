@@ -27,8 +27,8 @@ jobs:
         uses: actions/checkout@main
 
       - name: lint
-        uses: dylan-picquendar/Docker-Lint-Action@v1.0.0
+        uses: dylan-picquendar/picquendar-cloud-i2ASR@v1.0.0
         with:
-          target: ../../guestbook/Dockerfile
+          target: guestbook/Dockerfile
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
