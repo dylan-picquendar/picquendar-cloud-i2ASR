@@ -25,7 +25,6 @@ jobs:
         with:
           image: docker/github-actions:v1
           registry: docker.io
-          tags: latest
           dockerfile: guestbook/Dockerfile
 
 #      - name: Build and push
