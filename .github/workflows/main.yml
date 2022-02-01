@@ -27,7 +27,7 @@ jobs:
         uses: actions/checkout@main
 
       - name: lint
-        uses: dylan-picquendar/picquendar-cloud-i2ASR/guestbook/
+        uses: picquendar-cloud-i2ASR/guestbook/
         with:
           target: Dockerfile
         env:
