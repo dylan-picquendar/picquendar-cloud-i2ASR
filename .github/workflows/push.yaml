@@ -25,7 +25,7 @@ jobs:
         working-directory: ./guestbook
 
       - name: Push Docker images
-        run: docker push dylan-picquendar/guestbook:$GITHUB_SHA
+        run: docker push 260219010608/guestbook:$GITHUB_SHA
         working-directory: ./guestbook
 
 
