@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: guestbook-picquendar
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.class: 'nginx'
 spec:
   rules:
   - host: picquendar.34.79.246.69.nip.io
