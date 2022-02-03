@@ -43,5 +43,12 @@ jobs:
       - name: 'Install Kubectl'
         uses: azure/setup-kubectl@v2.0
 
-      - name: 'Apply all YAML'
+      - name: Deploy the application
+        run: kubectl create deployment guestbook-picquendar --image=260219010608/guestbook:$GITHUB_SHA
+        continue-on-error: true
+
+      - name: Deploy application
+        run: kubectl set image deployment/guestbook-picquendar guestbook=260219010608/guestbook:$GITHUB_SHA
+
+      - name: Expose application
         run: kubectl apply -f ./deploy
