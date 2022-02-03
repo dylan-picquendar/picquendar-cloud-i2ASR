@@ -44,4 +44,4 @@ jobs:
         uses: azure/setup-kubectl@v2.0
 
       - name: 'Apply all YAML'
-        run: kubectl apply -f ./deploy -
+        run: kubectl apply -f ./deploy
