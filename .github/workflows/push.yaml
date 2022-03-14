@@ -29,26 +29,26 @@ jobs:
         run: docker push 260219010608/guestbook:$GITHUB_SHA
         working-directory: ./guestbook
 
-      - name: 'Google auth'
-        uses: google-github-actions/auth@v0
-        with:
-          credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+#      - name: 'Google auth'
+#       uses: google-github-actions/auth@v0
+#        with:
+#          credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
 
-      - name: 'Set up Cloud SDK'
-        uses: google-github-actions/setup-gcloud@v0
+#      - name: 'Set up Cloud SDK'
+#        uses: google-github-actions/setup-gcloud@v0
 
-      - name: 'Use gcloud CLI'
-        run: gcloud container clusters get-credentials cluster-1 --zone europe-west1-b --project kubernetes-187222
+#      - name: 'Use gcloud CLI'
+#        run: gcloud container clusters get-credentials cluster-1 --zone europe-west1-b --project kubernetes-187222
 
-      - name: 'Install Kubectl'
-        uses: azure/setup-kubectl@v2.0
+#      - name: 'Install Kubectl'
+#        uses: azure/setup-kubectl@v2.0
 
-      - name: Deploy the application
-        run: kubectl create deployment guestbook-picquendar --image=260219010608/guestbook:$GITHUB_SHA
-        continue-on-error: true
+#     - name: Deploy the application
+#       run: kubectl create deployment guestbook-picquendar --image=260219010608/guestbook:$GITHUB_SHA
+#        continue-on-error: true
 
-      - name: Deploy application
-        run: kubectl set image deployment/guestbook-picquendar guestbook=260219010608/guestbook:$GITHUB_SHA
+#      - name: Deploy application
+#        run: kubectl set image deployment/guestbook-picquendar guestbook=260219010608/guestbook:$GITHUB_SHA
 
-      - name: Expose application
-        run: kubectl apply -f ./deploy
+#      - name: Expose application
+#        run: kubectl apply -f ./deploy
